@@ -6,7 +6,7 @@ let container = document.getElementById("container");
 window.onload = startPage;
 
 prodLink.addEventListener("click", function () {
-  fetch("https://stina-classic-models.herokuapp.com/products")
+  fetch("http://localhost:3000/products")
     .then(res => res.json())
     .then(result => {
       // console.log(result);
@@ -26,7 +26,7 @@ prodLink.addEventListener("click", function () {
           category: e.target.id
         }
 
-        fetch("https://stina-classic-models.herokuapp.com/products", {
+        fetch("http://localhost:3000/products", {
             method: "post",
             headers: {
               "Content-type": "application/json"
@@ -48,7 +48,7 @@ prodLink.addEventListener("click", function () {
 })
 
 contactLink.addEventListener("click", function () {
-  fetch("https://stina-classic-models.herokuapp.com/contacts/offices")
+  fetch("http://localhost:3000/contacts/offices")
     .then(res => res.json())
     .then(offices => {
       console.log(offices);
@@ -71,7 +71,7 @@ contactLink.addEventListener("click", function () {
         console.log(officeCodeObj);
 
 
-        fetch(`https://stina-classic-models.herokuapp.com/contacts/${officeCode}`, {
+        fetch(`http://localhost:3000/contacts/${officeCode}`, {
             method: "post",
             headers: {
               "Content-type": "application/json"
